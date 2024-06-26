@@ -13,7 +13,7 @@
 		cordova,file,open,intent,video,audio,image,photo,pdf
 	</keywords>
 	<repo>
-		https://github.com/disusered/cordova-open
+		https://github.com/JOSEOSTI/cordova-open
 	</repo>
 	<issue>
 		https://github.com/disusered/cordova-open/issues
@@ -28,9 +28,9 @@
 			</feature>
 		</config-file>
 		<config-file parent="/manifest/application" target="AndroidManifest.xml">
-        <provider android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+			<provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/cdv_core_file_provider_paths" />
-        </provider>
+			</provider>
 		</config-file>
 		<source-file src="src/android/Open.java" target-dir="src/com/disusered" />
 		<source-file src="src/android/provider_paths.xml" target-dir="res/xml" />
@@ -46,6 +46,10 @@
 		<source-file src="src/ios/Open.m" />
 		<header-file src="src/ios/Open.h" />
 	</platform>
+	<dependency id="cordova-plugin-file" />
+	<dependency id="cordova-plugin-file-transfer" />
+</plugin>
+
 	<dependency id="cordova-plugin-file" />
 	<dependency id="cordova-plugin-file-transfer" />
 </plugin>
