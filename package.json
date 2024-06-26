@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Open audio, video, images and more with applications installed on the user's device",
   "cordova": {
-    "id": "com.disusered.open",
+    "id": "com.dcordova.open",
     "platforms": [
       "android",
       "ios"
