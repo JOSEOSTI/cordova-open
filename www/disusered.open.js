@@ -1,11 +1,3 @@
-/**
- * disusered.open.js
- *
- * @overview Open documents with compatible apps.
- * @author Carlos Antonio
- * @license MIT
-*/
-
 var exec = require('cordova/exec');
 
 /**
