@@ -67,14 +67,14 @@ public class Open extends CordovaPlugin {
                 Intent fileIntent = new Intent(Intent.ACTION_VIEW);
 
                 // see http://stackoverflow.com/questions/25592206/how-to-get-your-context-in-your-phonegap-plugin
-                if (Build.VERSION.SDK_INT >= 34) {
+                if (Build.VERSION.SDK_INT >= 33) {
                     Context context = cordova.getActivity().getApplicationContext();
                     File imageFile = new File(uri.getPath());
                     Uri photoURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", imageFile);
                     fileIntent.setDataAndTypeAndNormalize(photoURI, mime);
                     // see http://stackoverflow.com/questions/39450748/intent-shows-a-blank-image
                     fileIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                } else if (Build.VERSION.SDK_INT > 34) {
+                } else if (Build.VERSION.SDK_INT > 30) {
                     fileIntent.setDataAndTypeAndNormalize(uri, mime); // API Level 16 -> Android 4.1
                 } else {
                     fileIntent.setDataAndType(uri, mime);
